@@ -1,0 +1,43 @@
+<hr>
+<h3 class="center colorWhite">DASHBOARD</h3>
+<hr>
+<h3 class="colorWhite">Welcome <span class="upperCase">{{name}}</span></h3>
+<br>
+<h6 class="colorWhite">Here are your stories -</h6>
+
+{{#if stories}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>TITLE</th>
+            <th>DATE</th>
+            <th>STATUS</th>
+            <th>OPTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each stories}}
+        <tr>
+            <td><u><a class="colorWhite" href="/stories/"{{_id}}>{{title}}</a></u></td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td><span class="dash-status upperCase">{{status}}</span></td>
+            <td>
+                <a href="/stories/edit/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-edit"></i>
+                </a>
+
+                <form action="/stories/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{else}}
+    <p class="colorWhite">You have not created any stories from your life yet. Kindly Click the + button and spread your thoughts.</p>
+{{/if}}

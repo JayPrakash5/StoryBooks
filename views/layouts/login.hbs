@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>StoryBooks Login</title>
+</head>
+
+<body>
+
+    {{!-- <div class="bg">
+        <div class="container login-container ">
+            <div class="card shadow">
+                <img class="card-img-top" src="/images/1.jpg" alt="Card image" style="width:400px; height:300px">
+                <div class="card-body">
+                    {{{body}}}
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
+
+    <div class="bg" id="dvImage">
+        <div class="flip-card login-container">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/welcome.png" alt="Avatar" style="width:300px; height:300px;">
+                </div>
+                <div class="flip-card-back">
+                    <div class="card-body">
+                        {{{body}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Script to change the background of Login Page every 5 seconds --}}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var images = ["1.jpg", "book.jpg", "3.jpg"];
+        $(function () {
+            var i = 0;
+            $("#dvImage").css("background-image", "url(/images/" + images[i] + ")");
+            setInterval(function () {
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+                $("#dvImage").fadeOut("fast", function () {
+                    $(this).css("background-image", "url(/images/" + images[i] + ")");
+                    $(this).fadeIn("slow");
+                });
+            }, 5000);
+        });
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

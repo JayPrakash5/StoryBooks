@@ -1,0 +1,112 @@
+p {
+  margin: 10px 0 !important;
+}
+
+.colorWhite, th, td, .select-wrapper input.select-dropdown {
+  color: white;
+}
+
+.upperCase {
+  text-transform : uppercase;
+}
+
+.login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 400px;
+  text-align: center;
+}
+
+.fa-small {
+  font-size: 16px !important;
+}
+
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.img-small {
+  width: 180px;
+}
+
+.card-container {
+  padding: 10px;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("/images/dash.jpg");
+
+  position: relative;
+
+  /* Full height */
+  height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.special-card {
+  /* create a custom class so you 
+     do not run into specificity issues 
+     against bootstraps styles
+     which tends to work better than using !important 
+     (future you will thank you later)*/
+  
+    background-color: rgba(245, 245, 245, 1);
+    opacity: .9;
+  }
+
+  .shadow {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+
+  /* For Login Page Card Flip Start */
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: transparent;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color:transparent;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  /* For Login Page Card Flip End */
